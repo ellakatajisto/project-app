@@ -60,7 +60,8 @@
 
 /* List layout: vertical arrangement */
 .list-layout {
-  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
   align-items: flex-start; /* Center each item horizontally */
 }
 
