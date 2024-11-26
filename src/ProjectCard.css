@@ -1,0 +1,177 @@
+/* Default styles */
+.Project-card.list-mode {
+  min-height: 220px;
+  margin: 10px 0px 10px 30px; /*Top and bottom margin*/
+  background-color: #ffffff; /* Background color set to white */
+  color: black; /* Adjust text color to black */
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #ddd;  */
+  width: 70%;
+  /* border-radius: 8px;  */
+}
+
+.Project-card.grid-mode {
+  min-height: 220px;
+  margin: 10px; /*Top and bottom margin*/
+  background-color: #ffffff; /* Background color set to white */
+  color: black; /* Adjust text color to black */
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #ddd;  */
+  width: 25%;
+}
+
+/* Mobile view */
+
+/* Default Styles for Larger Screens (assumes desktop or larger tablet) */
+/* .Project-card {
+  width: 20%; 
+} */
+
+/* Styles for screens 900px and below */
+@media (max-width: 900px) {
+  .Project-card {
+    width: 60%; /* 60% width for medium-sized screens (e.g., larger tablets) */
+  }
+
+  /* Ensure grid-mode cards take 60% width on medium screens */
+  .Project-card.grid-mode {
+    width: 60% !important; /* Force 60% width on medium screens */
+  }
+  
+  /* Hide the toggle buttons on medium-sized screens and below */
+  .Toggle-container {
+    display: none;
+  }
+}
+
+/* Styles for screens 600px and below (mobile screens) */
+@media (max-width: 600px) {
+  .Project-card {
+    width: 100%; /* 90% width on small screens (mobile) */
+  }
+
+  /* Ensure grid-mode cards take 90% width on smaller screens */
+  .Project-card.grid-mode {
+    width: 100% !important; /* Force 90% width on mobile screens */
+  }
+
+  /* Hide the toggle buttons on mobile screens */
+  .Toggle-container {
+    display: none;
+  }
+}
+
+
+/* Flex wrapper for grid and list modes */
+.card-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Default for grid mode: column (image on top, text below) */
+  gap: 10px;
+}
+
+.card-content-wrapper.list-mode {
+  display: flex;
+  flex-direction: row; /* Default for grid mode: column (image on top, text below) */
+  gap: 10px;
+}
+
+.card-content-wrapper.grid-mode {
+  display: flex;
+  flex-direction: column; /* Default for grid mode: column (image on top, text below) */
+  gap: 10px;
+}
+
+/* Image container styles */
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+#urban-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* In List mode, make the image square (150px by 150px) */
+.card-content-wrapper.list-mode .image-container {
+  width: 150px; /* Fixed width to maintain square aspect */
+  height: 150px; /* Fixed height to maintain square aspect */
+  padding-right: 20px; /* Space between image and text */
+}
+
+/* In List mode, text container adjusts to the remaining space */
+.card-content-wrapper.list-mode .text-container {
+  text-align: left;
+  width: calc(100% - 170px); /* Take the rest of the width minus image space */
+}
+
+/* In Grid mode (default), the image takes 100% width */
+.card-content-wrapper.grid-mode .image-container {
+  width: 100%;
+  height: 200px; /* Adjust the height as necessary */
+}
+
+.card-content-wrapper.grid-mode .text-container {
+  text-align: left;
+  width: 100%;
+}
+
+/* Container for tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow tags to wrap to the next line if needed */
+  gap: 0 8px; /* Only horizontal space between tags */
+}
+
+/* Style for each tag */
+.tag {
+  background-color: #00c295; /* Optional: Tag background color */
+  padding: 4px 8px; /* Padding around tag */
+  border-radius: 12px; /* Optional: Rounded corners for tags */
+  color: black; /* Tag text color */
+  font-size: 0.7rem; /* Optional: Font size for tags */
+  white-space: nowrap; /* Prevents tags from breaking into multiple lines */
+  margin: 3px 0;
+  font-weight: bold;
+}
+
+.event-time {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Styles for grid and list toggle buttons (optional) */
+.toggle-option.active {
+  background-color: black;
+  color: white;
+}
+
+.card-header {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.0rem;
+}
+
+.project-title {
+  margin: 0px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 5px; /* Set the height of the progress bar */
+  background-color: #e0e0e0; /* Light background color for the container */
+}
+
+/* Actual progress bar */
+.progress-bar {
+  height: 100%;
+  background-color: #00c295; /* Color of the progress (green) */
+  width: 0%; /* This will be dynamically set */
+}

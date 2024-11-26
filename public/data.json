@@ -1,0 +1,30 @@
+[
+    {
+      "district": "Neukölln",
+      "tags": ["Urban Development", "Sustainability"],
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "days_left": 10
+    },
+    {
+      "district": "Mitte",
+      "tags": ["Culture and leisure", "Children, youth and family"],
+      "title": "Title of an external project - Starting in future",
+      "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+      "days_left": 25
+    },
+    {
+        "district": "Kreuzberg",
+        "tags": ["Work and economy", "Urban development"],
+        "title": "Title of an external project - Starting in future",
+        "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+        "days_left": 50
+      },
+      {
+        "district": "Neukölln",
+        "tags": ["Sustainability", "Education and research"],
+        "title": "Title of an external project - Starting in future",
+        "description": "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
+        "days_left": 60
+      }
+  ]
