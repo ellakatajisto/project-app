@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow with slight blur */
 }
 
 .App-body {

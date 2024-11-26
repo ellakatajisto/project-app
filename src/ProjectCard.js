@@ -53,6 +53,7 @@ function ProjectCard(props) {
           </p>
         </div>
       </div>
+      {!isGrid && !isSmall && <div className="divider"></div>}
     </div>
   );
 }
