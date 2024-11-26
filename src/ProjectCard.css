@@ -1,34 +1,27 @@
 /* Default styles */
 .Project-card.list-mode {
   min-height: 220px;
-  margin: 10px; /*Top and bottom margin*/
-  background-color: #ffffff; /* Background color set to white */
-  color: black; /* Adjust text color to black */
+  margin: 10px; 
+  background-color: #ffffff; 
+  color: black; 
   display: flex;
   flex-direction: column;
 }
 
 .Project-card.grid-mode {
   min-height: 220px;
-  margin: 10px; /*Top and bottom margin*/
-  background-color: #ffffff; /* Background color set to white */
-  color: black; /* Adjust text color to black */
+  margin: 10px; 
+  background-color: #ffffff; 
+  color: black; 
   display: flex;
   flex-direction: column;
-  /* border: 1px solid #ddd;  */
   width: 25%;
 }
 
-/* Mobile view */
-
-/* Default Styles for Larger Screens (assumes desktop or larger tablet) */
-/* .Project-card {
-  width: 20%; 
-} */
 @media (min-width: 768px){
   .Project-card.list-mode {
-    margin-left: 11%;
-    width: 70%;
+    /* margin-left: 11%; */
+    width: 50%;
   }
 }
 /* Styles for screens px and below (mobile screens) */
@@ -58,7 +51,7 @@
 
 .card-content-wrapper.list-mode {
   display: flex;
-  flex-direction: row; /* Default for grid mode: column (image on top, text below) */
+  flex-direction: row; /* Default for list mode: column (image on left, text on the right) */
   gap: 10px;
 }
 
@@ -82,14 +75,14 @@
   object-position: center;
 }
 
-/* In List mode, make the image square (150px by 150px) */
+/* In list mode, make the image square (150px by 150px) */
 .card-content-wrapper.list-mode .image-container {
   width: 150px; /* Fixed width to maintain square aspect */
   height: 150px; /* Fixed height to maintain square aspect */
-  padding-right: 20px; /* Space between image and text */
+  padding-right: 20px; 
 }
 
-/* In List mode, text container adjusts to the remaining space */
+/* In list mode, text container adjusts to the remaining space */
 .card-content-wrapper.list-mode .text-container {
   text-align: left;
   width: calc(100% - 170px); /* Take the rest of the width minus image space */

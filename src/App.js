@@ -45,8 +45,10 @@ function App() {
         <h1></h1>
       </header>
       <div>
-        <div className="header-container">
-          <p>{projects.length} results found</p>
+        <div
+          className={`header-container ${isGrid ? "grid-mode" : "list-mode"}`}
+        >
+          <p>{projects.length} Results</p>
           <div className="Toggle-container">
             <button
               className={`toggle-option ${!isGrid ? "active" : ""}`}
