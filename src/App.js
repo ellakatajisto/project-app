@@ -8,6 +8,7 @@ function App() {
 
   // handle the layout change, horizontal vs. vertical
   const [isGrid, setIsGrid] = useState(true);
+  const [isSmall, setIsSmall] = useState(false);
 
   // Fetch data from local JSON file
   useEffect(() => {
@@ -21,8 +22,10 @@ function App() {
   // Add inside the component
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 900) {
-        setIsGrid(true); // Set to grid mode when screen width is below 900px
+      if (window.innerWidth < 767) {
+        setIsSmall(true); // Set to grid mode when screen width is below 900px
+      } else if (window.innerWidth > 767) {
+        setIsSmall(false);
       }
     };
 
@@ -38,12 +41,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <div className="Image-container">
-          <img src={} id=""></img> 
-        </div>
-      <h1>Title</h1> *
-      </header> */}
+      <header className="App-header">
+        <h1>Title</h1>
+      </header>
       <div>
         <div className="header-container">
           <p>{projects.length} results found</p>
@@ -66,7 +66,11 @@ function App() {
         <div className={`App-body ${isGrid ? "grid-layout" : "list-layout"}`}>
           {projects.map((project) => {
             return (
-              <ProjectCard project={project} isGrid={isGrid}></ProjectCard>
+              <ProjectCard
+                project={project}
+                isGrid={isGrid}
+                isSmall={isSmall}
+              ></ProjectCard>
             );
           })}
         </div>

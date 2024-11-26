@@ -2,29 +2,12 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #243b52;
-  /* min-height: 100vh; */
+  background-color: white;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  color: white;
+  color: black;
 }
 
 .App-body {
@@ -40,23 +23,26 @@
   align-items: center; /* Vertically center the items */
   padding: 10px 0px 10px 0px; /* Top and bottom padding */
   box-sizing: border-box; /* Prevents padding from affecting width calculations */
-  width: 80%;
-  margin: 0 auto
+  /* width: 80%; */
+  margin-left: 11%;
+  margin-right: 10%;
 }
 
 /* Styles for screens 900px and below */
 @media (max-width: 900px) {
-  .header-container{
+  /* .header-container{
+    
     width: 50%;
     padding: 10px 0px 10px 0px;
-  }
+  } */
 }
 
-/* Styles for screens 600px and below (mobile screens) */
-@media (max-width: 600px) {
+/* Styles for screens px and below (mobile screens) */
+@media (max-width: 767px) {
   .header-container{
-    width: 70%;
-    padding: 10px 0px 10px 0px;
+    margin-left: 2%;
+    /* width: 70%;
+    padding: 10px 0px 10px 0px; */
   }
 }
 
@@ -64,7 +50,6 @@
   display: flex;
   width: auto; /* Make sure it only takes the necessary width */
   border: 1px solid black;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
 /* Grid layout: horizontal arrangement with wrapping */
@@ -86,7 +71,7 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* transition time for background color change */
 }
 
 .toggle-option.active {
@@ -109,31 +94,14 @@
 
 /* Image container for the picture on the card */
 .image-container {
-  width: 200px; /* Set your desired square size */
-  height: 200px; /* Set the height to match the width */
-  overflow: hidden; /* Ensures the image is cropped if it's larger than the container */
+  width: 200px; 
+  height: 200px; 
+  overflow: hidden; /* Crop image if larger than container */
 }
 
 #urban-pic {
   width: 100%; /* Fill the container */
-  height: 100%; /* Ensure the height covers the container */
+  height: 100%; 
   object-fit: cover; /* Ensures the image fills the container and crops it to maintain aspect ratio */
   object-position: center; /* Optional: Adjusts which part of the image is focused (center in this case) */
 }
-
-
-.Image-container {
-  position:fixed;
-  left: 0;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
- .Card-button:hover { 
-    background-color: #000 !important;
-    border-color: white !important;
-    /* box-shadow: 'none'!important; */
- }

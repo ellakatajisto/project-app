@@ -1,14 +1,11 @@
 /* Default styles */
 .Project-card.list-mode {
   min-height: 220px;
-  margin: 10px 0px 10px 30px; /*Top and bottom margin*/
+  margin: 10px; /*Top and bottom margin*/
   background-color: #ffffff; /* Background color set to white */
   color: black; /* Adjust text color to black */
   display: flex;
   flex-direction: column;
-  /* border: 1px solid #ddd;  */
-  width: 70%;
-  /* border-radius: 8px;  */
 }
 
 .Project-card.grid-mode {
@@ -28,33 +25,21 @@
 /* .Project-card {
   width: 20%; 
 } */
-
-/* Styles for screens 900px and below */
-@media (max-width: 900px) {
-  .Project-card {
-    width: 60%; /* 60% width for medium-sized screens (e.g., larger tablets) */
-  }
-
-  /* Ensure grid-mode cards take 60% width on medium screens */
-  .Project-card.grid-mode {
-    width: 60% !important; /* Force 60% width on medium screens */
-  }
-  
-  /* Hide the toggle buttons on medium-sized screens and below */
-  .Toggle-container {
-    display: none;
+@media (min-width: 768px){
+  .Project-card.list-mode {
+    margin-left: 11%;
+    width: 70%;
   }
 }
-
-/* Styles for screens 600px and below (mobile screens) */
-@media (max-width: 600px) {
+/* Styles for screens px and below (mobile screens) */
+@media (max-width: 767px) {
   .Project-card {
-    width: 100%; /* 90% width on small screens (mobile) */
+    width: 90% !important; /* 90% width on small screens (mobile) */
   }
 
   /* Ensure grid-mode cards take 90% width on smaller screens */
   .Project-card.grid-mode {
-    width: 100% !important; /* Force 90% width on mobile screens */
+    width: 90% !important; /* Force 90% width on mobile screens */
   }
 
   /* Hide the toggle buttons on mobile screens */
@@ -140,9 +125,18 @@
   font-weight: bold;
 }
 
-.event-time {
+.text {
   margin: 5px 0;
+  display: flex;
   font-size: 0.9rem;
+  align-items: center;
+  gap: 6px; 
+  
+}
+
+.text .material-symbols-outlined {
+  font-size: 1rem; /* Adjust this to match your text size */
+  vertical-align: middle; /* Ensures proper alignment with text */
 }
 
 /* Styles for grid and list toggle buttons (optional) */

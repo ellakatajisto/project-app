@@ -5,6 +5,7 @@ function ProjectCard(props) {
   const {
     project,
     isGrid, // View mode control (grid or list)
+    isSmall,
   } = props;
 
   const maxDays = 70;
@@ -16,7 +17,9 @@ function ProjectCard(props) {
   return (
     <div className={`Project-card ${isGrid ? "grid-mode" : "list-mode"}`}>
       <div
-        className={`card-content-wrapper ${isGrid ? "grid-mode" : "list-mode"}`}
+        className={`card-content-wrapper ${
+          isGrid ? "grid-mode" : isSmall ? "small-mode" : "list-mode"
+        }`}
       >
         {/* Image section */}
         <div className="image-container">
@@ -37,8 +40,6 @@ function ProjectCard(props) {
           </div>
           <p className="project-title">{project.title}</p>
           <p className="event-time">{project.description}</p>
-          <p className="event-time">{project.days_left + " days left"}</p>
-          <p className="event-time">{project.next_start_formatted}</p>
           {/* Progress bar */}
           <div className="progress-bar-container">
             <div
@@ -46,6 +47,10 @@ function ProjectCard(props) {
               style={{ width: `${progress}%` }} // Dynamically set the width
             ></div>
           </div>
+          <p className="text">
+            <span class="material-symbols-outlined">schedule</span>
+            {project.days_left + " days left"}
+          </p>
         </div>
       </div>
     </div>
