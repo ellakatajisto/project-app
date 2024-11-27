@@ -55,7 +55,7 @@
 .toggle-option {
   flex: 1; /* Both buttons take equal width */
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -73,23 +73,13 @@
 }
 
 .toggle-option:first-child {
-  border-right: 1px solid black; /* Divider between List and Grid */
+  border-right: 1px solid black; /* Divider between buttons */
 }
 
 .toggle-option:focus {
   outline: none;
 }
 
-/* Image container for the picture on the card */
-.image-container {
-  width: 200px; 
-  height: 200px; 
-  overflow: hidden; /* Crop image if larger than container */
-}
-
-#urban-pic {
-  width: 100%; /* Fill the container */
-  height: 100%; 
-  object-fit: cover; /* Ensures the image fills the container and crops it to maintain aspect ratio */
-  object-position: center; /* Optional: Adjusts which part of the image is focused (center in this case) */
+.toggle-option:hover {
+  background-color: #D3D3D3;
 }
