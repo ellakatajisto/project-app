@@ -1,40 +1,26 @@
-/* Default styles */
-.Project-card.list-mode {
+.Project-card{
   min-height: 220px;
   margin: 10px; 
   background-color: #ffffff; 
   color: black; 
   display: flex;
   flex-direction: column;
+
+}
+
+.Project-card.list-mode {
+  width: 60%;
 }
 
 .Project-card.grid-mode {
-  min-height: 220px;
-  margin: 10px; 
-  background-color: #ffffff; 
-  color: black; 
-  display: flex;
-  flex-direction: column;
   width: 25%;
 }
 
-@media (min-width: 768px){
-  .Project-card.list-mode {
-    /* margin-left: 11%; */
-    width: 50%;
-  }
-}
-/* Styles for screens px and below (mobile screens) */
+/* Styles for small screens */
 @media (max-width: 767px) {
   .Project-card {
-    width: 90% !important; /* 90% width on small screens (mobile) */
+    width: 90% !important; 
   }
-
-  /* Ensure grid-mode cards take 90% width on smaller screens */
-  .Project-card.grid-mode {
-    width: 90% !important; /* Force 90% width on mobile screens */
-  }
-
   /* Hide the toggle buttons on mobile screens */
   .Toggle-container {
     display: none;
@@ -42,23 +28,18 @@
 }
 
 
-/* Flex wrapper for grid and list modes */
+/* Flex wrapper for card content container */
 .card-content-wrapper {
   display: flex;
-  flex-direction: column; /* Default for grid mode: column (image on top, text below) */
   gap: 10px;
 }
 
 .card-content-wrapper.list-mode {
-  display: flex;
   flex-direction: row; /* Default for list mode: column (image on left, text on the right) */
-  gap: 10px;
 }
 
 .card-content-wrapper.grid-mode {
-  display: flex;
   flex-direction: column; /* Default for grid mode: column (image on top, text below) */
-  gap: 10px;
 }
 
 /* Image container styles */
@@ -68,6 +49,7 @@
   overflow: hidden;
 }
 
+/* Media is centered horizontally and vertically */
 #urban-pic {
   width: 100%;
   height: 100%;
@@ -75,20 +57,18 @@
   object-position: center;
 }
 
-/* In list mode, make the image square (150px by 150px) */
+/* In list mode, make the image square */
 .card-content-wrapper.list-mode .image-container {
-  width: 150px; /* Fixed width to maintain square aspect */
-  height: 150px; /* Fixed height to maintain square aspect */
+  width: 250px; /* Fixed width to maintain square aspect */
   padding-right: 20px; 
+  margin-top: 20px;
 }
 
-/* In list mode, text container adjusts to the remaining space */
 .card-content-wrapper.list-mode .text-container {
   text-align: left;
-  width: calc(100% - 170px); /* Take the rest of the width minus image space */
+  width: calc(100% - 150px); /* Take the rest of the width minus image space */
 }
 
-/* In Grid mode (default), the image takes 100% width */
 .card-content-wrapper.grid-mode .image-container {
   width: 100%;
   height: 200px; /* Adjust the height as necessary */
@@ -102,46 +82,38 @@
 /* Container for tags */
 .tags-container {
   display: flex;
-  flex-wrap: wrap; /* Allow tags to wrap to the next line if needed */
+  flex-wrap: wrap; /* Allow whole tags to wrap to the next line if needed */
   gap: 0 8px; /* Only horizontal space between tags */
 }
 
-/* Style for each tag */
 .tag {
-  background-color: #00c295; /* Optional: Tag background color */
-  padding: 4px 8px; /* Padding around tag */
-  border-radius: 12px; /* Optional: Rounded corners for tags */
-  color: black; /* Tag text color */
-  font-size: 0.7rem; /* Optional: Font size for tags */
+  background-color: #00c295; 
+  padding: 4px 8px; 
+  border-radius: 12px; /* Rounded corners */
+  color: black; 
+  font-size: 0.7rem; 
   white-space: nowrap; /* Prevents tags from breaking into multiple lines */
   margin: 3px 0;
   font-weight: bold;
 }
 
-.text {
+.progress-text {
   margin: 5px 0;
   display: flex;
   font-size: 0.9rem;
-  align-items: center;
   gap: 6px; 
-  
 }
 
-.text .material-symbols-outlined {
-  font-size: 1rem; /* Adjust this to match your text size */
-  vertical-align: middle; /* Ensures proper alignment with text */
+/* Style for the clock icon */
+.progress-text .material-symbols-outlined {
+  font-size: 1rem; 
+  vertical-align: middle; 
 }
 
-/* Styles for grid and list toggle buttons (optional) */
+/* Style for the active toggle option */
 .toggle-option.active {
   background-color: black;
   color: white;
-}
-
-.card-header {
-  margin: 0px;
-  padding: 0px;
-  font-size: 1.0rem;
 }
 
 .project-title {
@@ -151,26 +123,24 @@
 
 .district {
   margin-bottom: 0.5rem;
-  margin-top: 0;
 }
 
-.progress-bar-container {
+.progress-background-bar{
   width: 100%;
-  height: 5px; /* Set the height of the progress bar */
-  background-color: #e0e0e0; /* Light background color for the container */
+  height: 5px; 
+  background-color: #e0e0e0; 
 }
 
-/* Actual progress bar */
 .progress-bar {
   height: 100%;
-  background-color: #00c295; /* Color of the progress (green) */
-  width: 0%; /* This will be dynamically set */
+  background-color: #00c295; 
+  width: 0%;
 }
 
 .divider {
   width: 100%;
-  height: 1px; /* Set the height of the progress bar */
-  background-color: #D3D3D3; /* Light background color for the container */
+  height: 1px; 
+  background-color: #D3D3D3; 
   margin-top: 15px;
   margin-bottom: 10px;
 }

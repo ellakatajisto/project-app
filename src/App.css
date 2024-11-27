@@ -25,7 +25,7 @@
   align-items: center; /* Vertically center the items */
   padding: 10px 0px 10px 0px; /* Top and bottom padding */
   box-sizing: border-box; /* Prevents padding from affecting width calculations */
-  margin-left: 25%;
+  margin-left: 20%;
   margin-right: 10%;
 }
 

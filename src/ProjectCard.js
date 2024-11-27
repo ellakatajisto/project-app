@@ -16,14 +16,19 @@ function ProjectCard(props) {
 
   return (
     <div className={`Project-card ${isGrid ? "grid-mode" : "list-mode"}`}>
+      {/* Switch card content to grid style also in small mode */}
       <div
         className={`card-content-wrapper ${
-          isGrid ? "grid-mode" : isSmall ? "small-mode" : "list-mode"
+          isGrid ? "grid-mode" : isSmall ? "grid-mode" : "list-mode"
         }`}
       >
         {/* Image section */}
         <div className="image-container">
-          <img src={urban} id="urban-pic" alt="Picture of a urban landscape" />
+          <img
+            src={urban}
+            id="urban-pic"
+            alt="Picture of a urban landscape with futuristic apartment building blocks and trees"
+          />
         </div>
 
         {/* Content section */}
@@ -39,15 +44,15 @@ function ProjectCard(props) {
               ))}
           </div>
           <p className="project-title">{project.title}</p>
-          <p className="event-time">{project.description}</p>
+          <p>{project.description}</p>
           {/* Progress bar */}
-          <div className="progress-bar-container">
+          <div className="progress-background-bar">
             <div
               className="progress-bar"
               style={{ width: `${progress}%` }} // Dynamically set the width
             ></div>
           </div>
-          <p className="text">
+          <p className="progress-text">
             <span class="material-symbols-outlined">schedule</span>
             {project.days_left + " days left"}
           </p>
