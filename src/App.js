@@ -1,11 +1,11 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import ToggleButton from "./ToggleButton";
 
 function App() {
   // for fetching the projects from the API
   const [projects, setProjects] = useState([]);
-
   // handle the layout change, horizontal vs. vertical
   const [isGrid, setIsGrid] = useState(true);
   // check for small screen size
@@ -14,15 +14,18 @@ function App() {
   // Fetch data from local JSON file
   useEffect(() => {
     fetch("/data.json")
-      .then((res) => res.json())
-      .then((json) => {
-        setProjects(json);
-      });
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch data");
+        return res.json();
+      })
+      .then((json) => setProjects(json))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  const BREAKPOINT_SMALL = 767;
   useEffect(() => {
     const handleResize = () => {
-      setIsSmall(window.innerWidth < 767);
+      setIsSmall(window.innerWidth < BREAKPOINT_SMALL);
     };
 
     // Add event listener on mount
@@ -46,18 +49,16 @@ function App() {
         >
           <p>{projects.length} Results</p>
           <div className="Toggle-container">
-            <button
-              className={`toggle-option ${!isGrid ? "active" : ""}`}
+            <ToggleButton
+              isGrid={!isGrid}
               onClick={() => setIsGrid(false)}
-            >
-              List
-            </button>
-            <button
-              className={`toggle-option ${isGrid ? "active" : ""}`}
+              label={"List"}
+            />
+            <ToggleButton
+              isGrid={isGrid}
               onClick={() => setIsGrid(true)}
-            >
-              Grid
-            </button>
+              label={"Grid"}
+            />
           </div>
         </div>
 

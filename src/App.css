@@ -39,7 +39,7 @@
   margin-right: 10%;
 }
 
-/* Styles for screens px and below (mobile screens) */
+/* Styles for small screens */
 @media (max-width: 767px) {
   .header-container{
     margin-left: 5% !important;

@@ -1,4 +1,4 @@
-import "./ProjectCard.css"; // Import CSS
+import "./ProjectCard.css";
 import urban from "./urban.png";
 
 function ProjectCard(props) {
