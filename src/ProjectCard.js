@@ -28,7 +28,7 @@ function ProjectCard(props) {
 
         {/* Content section */}
         <div className="text-container">
-          <p className="card-header">{project.district}</p>
+          <p className="district">{project.district}</p>
           {/* Iterate through the tags and display them */}
           <div className="tags-container">
             {project.tags &&

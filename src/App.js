@@ -8,25 +8,21 @@ function App() {
 
   // handle the layout change, horizontal vs. vertical
   const [isGrid, setIsGrid] = useState(true);
+  // check for small screen size
   const [isSmall, setIsSmall] = useState(false);
 
   // Fetch data from local JSON file
   useEffect(() => {
-    fetch("/data.json") // Assuming data.json is inside the public folder
+    fetch("/data.json")
       .then((res) => res.json())
       .then((json) => {
         setProjects(json);
       });
   }, []);
 
-  // Add inside the component
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 767) {
-        setIsSmall(true); // Set to grid mode when screen width is below 900px
-      } else if (window.innerWidth > 767) {
-        setIsSmall(false);
-      }
+      setIsSmall(window.innerWidth < 767);
     };
 
     // Add event listener on mount
@@ -65,7 +61,7 @@ function App() {
           </div>
         </div>
 
-        <div className={`App-body ${isGrid ? "grid-layout" : "list-layout"}`}>
+        <div className="App-body">
           {projects.map((project) => {
             return (
               <ProjectCard
