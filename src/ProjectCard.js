@@ -19,7 +19,7 @@ function ProjectCard(props) {
       {/* Switch card content to grid style also in small mode */}
       <div
         className={`card-content-wrapper ${
-          isGrid ? "grid-mode" : isSmall ? "grid-mode" : "list-mode"
+          isGrid || isSmall ? "grid-mode" : "list-mode"
         }`}
       >
         {/* Image section */}
@@ -37,8 +37,8 @@ function ProjectCard(props) {
           {/* Iterate through the tags and display them */}
           <div className="tags-container">
             {project.tags &&
-              project.tags.map((tag, index) => (
-                <p key={index} className="tag">
+              project.tags.map((tag) => (
+                <p key={tag} className="tag">
                   {tag}
                 </p>
               ))}
@@ -53,12 +53,11 @@ function ProjectCard(props) {
             ></div>
           </div>
           <p className="progress-text">
-            <span class="material-symbols-outlined">schedule</span>
+            <span className="material-symbols-outlined">schedule</span>
             {project.days_left + " days left"}
           </p>
         </div>
       </div>
-      {!isGrid && !isSmall && <div className="divider"></div>}
     </div>
   );
 }

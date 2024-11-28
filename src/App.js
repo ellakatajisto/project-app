@@ -65,11 +65,14 @@ function App() {
         <div className="App-body">
           {projects.map((project) => {
             return (
-              <ProjectCard
-                project={project}
-                isGrid={isGrid}
-                isSmall={isSmall}
-              ></ProjectCard>
+              <>
+                <ProjectCard
+                  project={project}
+                  isGrid={isGrid}
+                  isSmall={isSmall}
+                ></ProjectCard>
+                {!isGrid && !isSmall && <div className="divider"></div>}
+              </>
             );
           })}
         </div>
