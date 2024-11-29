@@ -77,7 +77,7 @@
 }
 
 .toggle-option:focus {
-  outline: none;
+  outline: 2px solid blue;  /* Clearly highlights focused elements for keyboard users */
 }
 
 .toggle-option:hover {

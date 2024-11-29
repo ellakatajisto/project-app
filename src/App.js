@@ -38,9 +38,18 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Handle keyboard navigation for toggle buttons
+  const handleKeyDown = (event, isGridMode) => {
+    if (event.key === "Enter" || event.key === " ") {
+      setIsGrid(isGridMode);
+      // Prevents default scrolling behavior for the Space key
+      event.preventDefault();
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" role="banner">
         <h1></h1>
       </header>
       <div>
@@ -48,21 +57,30 @@ function App() {
           className={`header-container ${isGrid ? "grid-mode" : "list-mode"}`}
         >
           <p>{projects.length} Results</p>
-          <div className="Toggle-container">
+          <div
+            className="Toggle-container"
+            role="group"
+            aria-label="View layout toggle button"
+          >
             <ToggleButton
               isGrid={!isGrid}
               onClick={() => setIsGrid(false)}
               label={"List"}
+              aria-label="Switch to List View"
+              handleKeyDown={handleKeyDown}
             />
             <ToggleButton
               isGrid={isGrid}
               onClick={() => setIsGrid(true)}
               label={"Grid"}
+              aria-label="Switch to Grid View"
+              handleKeyDown={handleKeyDown}
             />
           </div>
         </div>
 
-        <div className="App-body">
+        {/* Easier for screen readers to understand primary content */}
+        <main className="App-body" aria-labelledby="projects-section">
           {projects.map((project) => {
             return (
               <>
@@ -75,7 +93,7 @@ function App() {
               </>
             );
           })}
-        </div>
+        </main>
       </div>
     </div>
   );

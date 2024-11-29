@@ -35,7 +35,16 @@ function ProjectCard(props) {
         <div className="text-container">
           <p className="district">{project.district}</p>
           {/* Iterate through the tags and display them */}
-          <div className="tags-container">
+          {/* aria-labelledby implies that the element with tags-label is used to describe tags-container */}
+          <div
+            className="tags-container"
+            role="group"
+            aria-labelledby="tags-label"
+          >
+            {/* Label to describe the tags conatiner, only visible for screen readers*/}
+            <p id="tags-label" className="sr-only">
+              Category tags for the project
+            </p>
             {project.tags &&
               project.tags.map((tag) => (
                 <p key={tag} className="tag">
@@ -43,12 +52,22 @@ function ProjectCard(props) {
                 </p>
               ))}
           </div>
-          <p className="project-title">{project.title}</p>
+          {/* specifies subheading -> and hierarchy of the page content */}
+          <p className="project-title" role="heading" aria-level="2">
+            {project.title}
+          </p>
           <p>{project.description}</p>
           {/* Progress bar */}
           <div className="progress-background-bar">
             <div
               className="progress-bar"
+              role="progressbar" /* Specifices the role progress bar */
+              aria-valuenow={
+                progress
+              } /* Specifies the current value of the progress*/
+              aria-valuemin="0" /* Min days */
+              aria-valuemax="70" /* Max days */
+              aria-label="Current project progress between 0 and 70 days"
               style={{ width: `${progress}%` }} // Dynamically set the width
             ></div>
           </div>
