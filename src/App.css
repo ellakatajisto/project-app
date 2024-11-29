@@ -76,9 +76,10 @@
   border-right: 1px solid black; /* Divider between buttons */
 }
 
-.toggle-option:focus {
-  outline: 2px solid blue;  /* Clearly highlights focused elements for keyboard users */
-}
+/* Clearly highlights focused elements for keyboard users, commented out now bc it's not pretty */
+/* .toggle-option:focus {
+  outline: 2px solid blue;  
+} */
 
 .toggle-option:hover {
   background-color: #D3D3D3;

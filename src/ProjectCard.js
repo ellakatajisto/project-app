@@ -41,10 +41,6 @@ function ProjectCard(props) {
             role="group"
             aria-labelledby="tags-label"
           >
-            {/* Label to describe the tags conatiner, only visible for screen readers*/}
-            <p id="tags-label" className="sr-only">
-              Category tags for the project
-            </p>
             {project.tags &&
               project.tags.map((tag) => (
                 <p key={tag} className="tag">
