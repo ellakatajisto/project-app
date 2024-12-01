@@ -1,3 +1,7 @@
+:root {
+  --light-gray: #D3D3D3;
+}
+
 .App-header {
   background-color: white;
   display: flex;
@@ -19,24 +23,20 @@
   align-items: flex-start; /* Center each item horizontally */
 }
 
-.header-container.list-mode {
+.header-container {
   display: flex;
   justify-content: space-between; /* Space the items out (left and right) */
   align-items: center; /* Vertically center the items */
-  padding: 10px 0px 10px 0px; /* Top and bottom padding */
-  box-sizing: border-box; /* Prevents padding from affecting width calculations */
-  margin-left: 20%;
   margin-right: 10%;
+  box-sizing: border-box; /* Prevents padding from affecting width calculations */
+}
+
+.header-container.list-mode {
+  margin-left: 20%;
 }
 
 .header-container.grid-mode {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 0px 10px 0px; 
-  box-sizing: border-box; /* Prevents padding from affecting width calculations */
   margin-left: 11%;
-  margin-right: 10%;
 }
 
 /* Styles for small screens */
@@ -82,12 +82,12 @@
 } */
 
 .toggle-option:hover {
-  background-color: #D3D3D3;
+  background-color: var(--light-gray);
 }
 
 .divider {
   width: 60%;
   height: 1px; 
-  background-color: #D3D3D3; 
+  background-color: var(--light-gray); 
   margin-top: 15px;
 }

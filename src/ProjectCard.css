@@ -1,8 +1,12 @@
+:root {
+  --project-green: #00c295;
+  --progress-bar-gray: #e0e0e0;
+}
 .Project-card{
   min-height: 220px;
   margin: 10px;
   margin-top: 2rem; 
-  background-color: #ffffff; 
+  background-color: white; 
   color: black; 
   display: flex;
   flex-direction: column;
@@ -88,7 +92,7 @@
 }
 
 .tag {
-  background-color: #00c295; 
+  background-color: var(--project-green); 
   padding: 4px 8px; 
   border-radius: 12px; /* Rounded corners */
   color: black; 
@@ -129,11 +133,11 @@
 .progress-background-bar{
   width: 100%;
   height: 5px; 
-  background-color: #e0e0e0; 
+  background-color: var(--progress-bar-gray); 
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #00c295; 
+  background-color: var(--project-green); 
   width: 0%;
 }
